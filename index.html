@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Task - Todo List</title>
+<script defer src="main.js"></script></head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"></path>
+            </svg>
+            <h1>Dashboard</h1>
+        </div>
+
+        <div class="relatedToTasks">
+            <div class="titleAndButton">
+                <h2 class="allTasks" id="nav-all-tasks">All tasks</h2>
+            </div>
+
+            <ul>
+                <li id="nav-completed-tasks">
+                    <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,11.93L11.66,13.34L18,7Z" />
+                    </svg>
+                    Completed tasks
+                </li>
+            </ul>
+        </div>
+
+        <div class="relatedToProjects">
+            <div class="titleAndButton">
+                <h2 id="nav-my-projects">My projects</h2>
+                <button type="button" id="open-new-project-btn">+</button>
+            </div>
+
+            <ul id="sidebar-project-list">
+               
+            </ul>
+        </div>
+    </div>
+
+    <div class="header">
+        <p>Let's task</p>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-top"></div>
+        <div class="main-content-body"></div>
+    </div>
+
+</div>
+
+
+<dialog id="new-task-dialog">
+    <h3 id="task-dialog-title">Task Details</h3>
+    <form action="#" method="dialog" id="new-task-form">
+        <div>
+            <label for="task-title">Title:</label>
+            <input type="text" id="task-title" name="title" placeholder="What's the task?" maxlength="50" required>
+        </div>
+
+        <div>
+            <label for="task-description">Description:</label>
+            <textarea id="task-description" name="description" rows="3" cols="50" placeholder="Add more details"></textarea>
+        </div>
+
+        <div>
+            <label for="dueDate">Due date: (Optional)</label>
+            <input type="date" id="dueDate" name="dueDate">
+        </div>
+
+        <div>
+            <label for="priority">Set priority: (Optional)</label>
+            <select id="priority" name="priority">
+                <option value="1">Priority 1 (High)</option>
+                <option value="2">Priority 2 (Medium)</option>
+                <option value="3">Priority 3 (Low)</option>
+                <option value="4" selected>Priority 4 (Default)</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="project">Choose Project: (Optional)</label>
+            <select id="project" name="project">
+                <option value="">None</option>
+            </select>
+        </div>
+
+        
+        <div class="comments-section">
+            <label for="note">Notes / Comments:</label>
+            <div class="inline-input-group">
+                <input type="text" id="note" name="note" placeholder="Add a note or comment">
+                <button type="button" id="add-comment-btn">Add Comment</button>
+            </div>
+            <ul id="comments-list" class="dialog-list"></ul>
+        </div>
+
+       
+        <div class="subtasks-div">
+            <label for="subtask-input">Subtasks (Checklist):</label>
+            <div class="inline-input-group">
+                <input type="text" id="subtask-input" placeholder="New subtask title">
+                <button type="button" id="add-subtask-btn" class="subtasks-button">Add subtask</button>
+            </div>
+            <ul id="subtasks-list" class="dialog-list"></ul>
+        </div>
+
+        <div class="dialog-form-buttons">
+            <button type="submit" id="task-submit-btn" class="form-submit">Save Task</button>
+            <button type="button" id="close-task-dialog-btn">Cancel</button>
+        </div>
+    </form>
+</dialog>
+
+
+<dialog id="new-project-dialog">
+    <h3 id="project-dialog-title">Project Details</h3>
+    <form action="#" method="dialog" id="new-project-form">
+        <div>
+            <label for="project-title">Title:</label>
+            <input type="text" id="project-title" name="title" placeholder="What's the project?" maxlength="50" required>
+        </div>
+
+        <div>
+            <label for="project-description">Description:</label>
+            <textarea id="project-description" name="description" rows="4" cols="50" placeholder="Add project details"></textarea>
+        </div>
+
+        <div class="dialog-form-buttons">
+            <button type="submit" id="project-submit-btn" class="form-submit">Save Project</button>
+            <button type="button" id="close-project-dialog-btn">Cancel</button>
+        </div>
+    </form>
+</dialog>
+
+</body>
+</html>
